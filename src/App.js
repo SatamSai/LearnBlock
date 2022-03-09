@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Hash from './pages/hash';
+import Block from './pages/block';
+import BlockChain from './pages/blockchain';
+import Peered from './pages/peered';
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Hash/>}/>
+        <Route path='/block' element={<Block/>}/>
+        <Route path='/blockchain' element={<BlockChain/>}/>
+        <Route path='/peered' element={<Peered/>}/>
+      </Routes>
+    </Router>
   );
 }
 
